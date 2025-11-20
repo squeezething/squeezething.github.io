@@ -280,6 +280,15 @@
             .timer-number {
                 font-size: 1.5rem;
             }
+
+            /* Disable parallax background on mobile and use a lighter image */
+            .hero-section {
+                background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');
+                background-attachment: scroll;
+                background-position: center;
+                background-size: cover;
+                height: 70vh;
+            }
         }
     </style>
 </head>
@@ -327,9 +336,11 @@
             <div class="col-md-5 text-center mb-5 mb-md-0 reveal">
                 <div class="couple-img-wrapper">
                     <!-- Updated Groom Image with fallback -->
-                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="Groom"
-                         onerror="this.src='https://placehold.co/500x500?text=Groom'">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        srcset="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=60 320w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80 500w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                        sizes="(max-width: 768px) 160px, 250px"
+                        alt="Groom"
+                        onerror="this.src='https://placehold.co/500x500?text=Groom'">
                 </div>
                 <h3>Novandi</h3>
                 <p class="text-muted mt-3">The one who proposed. He loves sleeping, hiking, and Maura's cooking.</p>
@@ -344,9 +355,11 @@
             <div class="col-md-5 text-center reveal">
                 <div class="couple-img-wrapper">
                     <!-- Updated Bride Image with fallback -->
-                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="Bride"
-                         onerror="this.src='https://placehold.co/500x500?text=Bride'">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        srcset="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=60 320w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80 500w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                        sizes="(max-width: 768px) 160px, 250px"
+                        alt="Bride"
+                        onerror="this.src='https://placehold.co/500x500?text=Bride'">
                 </div>
                 <h3>Maura</h3>
                 <p class="text-muted mt-3">The one who said yes. She loves cofee, running, and Novandi's terrible jokes.</p>
@@ -436,19 +449,25 @@
         <div id="weddingCarousel" class="carousel slide carousel-fade reveal shadow-lg rounded" data-bs-ride="carousel">
             <div class="carousel-inner rounded">
                 <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                         class="d-block w-100" alt="Novandi and Maura 1" style="height: 500px; object-fit: cover;"
-                         onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+1'">
+                    <img src="https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        srcset="https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60 400w, https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w"
+                        sizes="(max-width: 768px) 100vw, 1200px"
+                        class="d-block w-100" alt="Novandi and Maura 1" style="height: 500px; object-fit: cover;"
+                        onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+1'">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                         class="d-block w-100" alt="Novandi and Maura 2" style="height: 500px; object-fit: cover;"
-                         onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+2'">
+                    <img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        srcset="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60 400w, https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w"
+                        sizes="(max-width: 768px) 100vw, 1200px"
+                        class="d-block w-100" alt="Novandi and Maura 2" style="height: 500px; object-fit: cover;"
+                        onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+2'">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                         class="d-block w-100" alt="Novandi and Maura 3" style="height: 500px; object-fit: cover;"
-                         onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+3'">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        srcset="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60 400w, https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w"
+                        sizes="(max-width: 768px) 100vw, 1200px"
+                        class="d-block w-100" alt="Novandi and Maura 3" style="height: 500px; object-fit: cover;"
+                        onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+3'">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#weddingCarousel" data-bs-slide="prev">
