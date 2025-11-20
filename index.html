@@ -245,6 +245,37 @@
             color: white;
         }
 
+
+        /* --- Gallery Grid --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
         /* --- Animations (Slide Up) --- */
         .reveal {
             position: relative;
@@ -306,7 +337,7 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#couple">Novandi and Maura</a></li>
                     <li class="nav-item"><a class="nav-link" href="#details">Details</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
                 </ul>
             </div>
@@ -441,44 +472,31 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="container">
+    <section id="galeri" class="container">
         <div class="section-title reveal">
             <div class="flower-divider"><i class="fas fa-camera-retro"></i></div>
-            <h2 class="script-font">Our Memories</h2>
+            <h2 class="script-font">Galeri</h2>
         </div>
 
-        <div id="weddingCarousel" class="carousel slide carousel-fade reveal shadow-lg rounded" data-bs-ride="carousel">
-            <div class="carousel-inner rounded">
-                <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                        srcset="https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60 400w, https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w"
-                        sizes="(max-width: 768px) 100vw, 1200px"
-                        class="d-block w-100" alt="Novandi and Maura 1" style="height: 500px; object-fit: cover;"
-                        onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+1'">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                        srcset="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60 400w, https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w"
-                        sizes="(max-width: 768px) 100vw, 1200px"
-                        class="d-block w-100" alt="Novandi and Maura 2" style="height: 500px; object-fit: cover;"
-                        onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+2'">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                        srcset="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60 400w, https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w"
-                        sizes="(max-width: 768px) 100vw, 1200px"
-                        class="d-block w-100" alt="Novandi and Maura 3" style="height: 500px; object-fit: cover;"
-                        onerror="this.src='https://placehold.co/1200x600?text=Wedding+Photo+3'">
-                </div>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519225469958-19e5db41091b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 1" onerror="this.src='https://placehold.co/500x500?text=Image+1'">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#weddingCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#weddingCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 2" onerror="this.src='https://placehold.co/500x500?text=Image+2'">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 3" onerror="this.src='https://placehold.co/500x500?text=Image+3'">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 4" onerror="this.src='https://placehold.co/500x500?text=Image+4'">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1549985453-6594321a2e5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 5" onerror="this.src='https://placehold.co/500x500?text=Image+5'">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1529634885142-112153ed5924?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gallery Image 6" onerror="this.src='https://placehold.co/500x500?text=Image+6'">
+            </div>
         </div>
     </section>
 
