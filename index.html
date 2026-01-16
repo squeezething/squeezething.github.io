@@ -10,11 +10,23 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allison&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
+         /* ...existing code... */
+
+        /* Image reflection / flip helpers */
+        .reflect-horizontal { transform: scaleX(-1); } /* flip left-right */
+        .reflect-vertical   { transform: scaleY(-1); } /* flip top-bottom */
+        .reflect-both       { transform: scale(-1, -1); } /* flip both axes */
+
+        /* Optional: smooth transform */
+        .reflect-horizontal,
+        .reflect-vertical,
+        .reflect-both { transition: transform 0.3s ease; }
+        
         :root {
             --primary-color: #D4AF37; /* Gold */
             --secondary-color: #f8f9fa; /* Light Gray */
@@ -33,7 +45,7 @@
         }
 
         .script-font {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Allison', cursive;
             color: var(--primary-color);
         }
 
@@ -58,7 +70,7 @@
         .hero-section {
             height: 100vh;
             /* Updated Hero Image */
-            background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: url('assets/bg/WhatsApp Image 2026-01-16 at 22.45.59.jpeg');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -314,7 +326,7 @@
 
             /* Disable parallax background on mobile and use a lighter image */
             .hero-section {
-                background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');
+                background-image: url('assets/bg/WhatsApp Image 2026-01-16 at 22.45.59.jpeg');
                 background-attachment: scroll;
                 background-position: center;
                 background-size: cover;
@@ -328,7 +340,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand script-font" href="#" style="font-size: 1.8rem;">N & M</a>
+            <a class="navbar-brand script-font" href="#" style="font-size: 1.8rem;"><i class="fas fa-heart text-danger"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -338,7 +350,7 @@
                     <li class="nav-item"><a class="nav-link" href="#couple">Novandi and Maura</a></li>
                     <li class="nav-item"><a class="nav-link" href="#details">Details</a></li>
                     <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
+                
                 </ul>
             </div>
         </div>
@@ -348,18 +360,20 @@
     <header id="home" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="container hero-content reveal">
-            <p class="text-uppercase mb-2" style="letter-spacing: 2px;">Kami Mengundang Anda Ke Pesta Pernikahan Yang Intim</p>
-            <h1 class="hero-names script-font">Maura & Novandi</h1>
-            <div class="hero-date">September 2, 2026</div>
+            <p class="text-uppercase mb-2" style="letter-spacing: 2px;">We're getting married
+What started as conversations and shared moments has grown into a decision we feel ready for.
+</p>
+            <h1 class="hero-names script-font">Novandi & Maura</h1>
+            <div class="hero-date">Wednesday, February 4th 2026
+</div>
         </div>
     </header>
 
     <!-- Novandi and Maura Section -->
     <section id="couple" class="container">
         <div class="section-title reveal">
-            <div class="flower-divider"><i class="fas fa-heart"></i></div>
-            <h2 class="script-font">Novandi and Maura</h2>
-            <p class="text-muted">We invite you to celebrate our love</p>
+            <h3 class="text-muted">Our Story</h3>
+        
         </div>
 
         <div class="row justify-content-center align-items-center">
@@ -367,12 +381,11 @@
             <div class="col-md-5 text-center mb-5 mb-md-0 reveal">
                 <div class="couple-img-wrapper">
                     <!-- Updated Groom Image with fallback -->
-                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                        srcset="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=60 320w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80 500w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                    <img src="assets/our/WhatsApp Image 2026-01-14 at 11.34.41.jpeg" 
+                    class="reflect-horizontal"
                         sizes="(max-width: 768px) 160px, 250px"
-                        alt="Groom"
-                        crossorigin="anonymous"
-                        onerror="this.src='https://placehold.co/500x500?text=Groom'">
+                        alt="Bride"
+                        onerror="this.src='https://placehold.co/500x500?text=Bride'">
                 </div>
                 <h3>Novandi</h3>
                 <p class="text-muted mt-3">The one who proposed. He loves sleeping, hiking, and Maura's cooking.</p>
@@ -387,14 +400,14 @@
             <div class="col-md-5 text-center reveal">
                 <div class="couple-img-wrapper">
                     <!-- Updated Bride Image with fallback -->
-                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                        srcset="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&q=60 320w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80 500w, https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                    <img src="assets/our/WhatsApp Image 2026-01-16 at 22.21.52.jpeg" 
+                    class="reflect-horizontal"
                         sizes="(max-width: 768px) 160px, 250px"
                         alt="Bride"
                         onerror="this.src='https://placehold.co/500x500?text=Bride'">
                 </div>
                 <h3>Maura</h3>
-                <p class="text-muted mt-3">The one who said yes. She loves cofee, running, and Novandi's terrible jokes.</p>
+                <p class="text-muted mt-3">The one who said yes. She loves coffee, running, and Novandi's terrible jokes.</p>
             </div>
         </div>
     </section>
@@ -420,53 +433,21 @@
             <div class="row g-4">
                 <div class="col-md-4 reveal">
                     <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-church"></i></div>
+                        <div class="detail-icon"><i class="fas fa-mosque"></i></div>
                         <h4>The Ceremony</h4>
-                        <p class="text-primary fw-bold">3:00 PM</p>
-                        <p class="text-muted">St. Peter's Chapel<br>123 Wedding Lane<br>New York, NY</p>
+                        <p class="text-primary fw-bold">9:00 AM</p>
+                        <p class="text-muted">Office of Religious Affairs (KUA)<br>West Bekasi</p>
                     </div>
                 </div>
                 <div class="col-md-4 reveal">
                     <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-glass-cheers"></i></div>
-                        <h4>The Reception</h4>
-                        <p class="text-primary fw-bold">5:30 PM</p>
-                        <p class="text-muted">Grand Ballroom Hotel<br>456 Party Street<br>New York, NY</p>
+                        <div class="detail-icon"><i class="fas fa-pizza-slice"></i></div>
+                        <h4>Family Events</h4>
+                        <p class="text-primary fw-bold">11:00 AM</p>
+                        <p class="text-muted">Amanaia Resto<br>Grand Kota Bintang<br>West Bekasi</p>
                     </div>
                 </div>
-                <div class="col-md-4 reveal">
-                    <div class="detail-card">
-                        <div class="detail-icon"><i class="fas fa-moon"></i></div>
-                        <h4>After Party</h4>
-                        <p class="text-primary fw-bold">10:00 PM</p>
-                        <p class="text-muted">Rooftop Lounge<br>Casual Attire<br>Drinks & Dancing</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Countdown Timer -->
-            <div class="row justify-content-center mt-5 reveal">
-                <div class="col-lg-8 text-center">
-                    <h3>Counting down the days</h3>
-                    <div id="countdown">
-                        <div class="timer-box">
-                            <span class="timer-number" id="days">00</span>
-                            <span class="timer-label">Days</span>
-                        </div>
-                        <div class="timer-box">
-                            <span class="timer-number" id="hours">00</span>
-                            <span class="timer-label">Hours</span>
-                        </div>
-                        <div class="timer-box">
-                            <span class="timer-number" id="minutes">00</span>
-                            <span class="timer-label">Mins</span>
-                        </div>
-                        <div class="timer-box">
-                            <span class="timer-number" id="seconds">00</span>
-                            <span class="timer-label">Secs</span>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
         </div>
     </section>
@@ -500,58 +481,12 @@
         </div>
     </section>
 
-    <!-- RSVP Section -->
-    <section id="rsvp" class="rsvp-section">
-        <div class="container">
-            <div class="section-title reveal">
-                <div class="flower-divider"><i class="fas fa-envelope-open-text"></i></div>
-                <h2 class="script-font">Will You Be There?</h2>
-                <p>Please RSVP by August 1st, 2025</p>
-            </div>
-
-            <div class="row justify-content-center reveal">
-                <div class="col-lg-6 bg-white p-5 shadow-sm rounded">
-                    <form id="rsvpForm" onsubmit="handleRSVP(event)">
-                        <div class="mb-4">
-                            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Your Full Name" required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-4">
-                            <select class="form-select" id="guests" name="guests">
-                                <option selected>Number of Guests</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4+</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <select class="form-select" id="attending" name="attending">
-                                <option selected>Are you attending?</option>
-                                <option value="yes">Yes, I'll be there!</option>
-                                <option value="no">Sorry, I can't come.</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Message for Novandi and Maura (Dietary restrictions, etc.)"></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-rsvp">Send RSVP</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <h2 class="script-font mb-3">Maura & Novandi</h2>
-            <p class="small mb-0">We can't wait to see you!</p>
-            <p class="small text-muted mt-2">Designed with <i class="fas fa-heart text-danger"></i></p>
+            <p class="small mb-0">Thank you for being part of our special day!</p>
+            <p class="small text-muted mt-2"><i class="fas fa-heart text-danger"></i></p>
         </div>
     </footer>
 
