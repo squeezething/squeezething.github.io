@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maura & Novandi | Wedding Information</title>
+    <title>Novandi & Maura | Wedding Announcement</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -349,7 +349,9 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#couple">Novandi and Maura</a></li>
                     <li class="nav-item"><a class="nav-link" href="#details">Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#notes">Gentle Notes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    
                 
                 </ul>
             </div>
@@ -361,8 +363,7 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content reveal">
             <p class="text-uppercase mb-2" style="letter-spacing: 2px; color: #D4AF37;">We're getting married</p>
-            <a>
-What started as conversations and shared moments has grown into a decision we feel ready for.</a>
+            <p>What started as conversations and shared moments has grown into a decision we feel ready for.</p>
             <h1 class="hero-names script-font">Novandi & Maura</h1>
             <div class="hero-date">Wednesday, February 4th 2026
 </div>
@@ -384,7 +385,7 @@ What started as conversations and shared moments has grown into a decision we fe
                         alt="Bride"
                         onerror="this.src='https://placehold.co/500x500?text=Bride'">
                 </div>
-                <h3>Novandi</h3>
+                <h3>Novandi Prasetyo Putro </h3>
                 <p class="text-muted mt-3">The one who proposed. He loves sleeping, hiking, and Maura's cooking.</p>
             </div>
 
@@ -403,7 +404,7 @@ What started as conversations and shared moments has grown into a decision we fe
                         alt="Bride"
                         onerror="this.src='https://placehold.co/500x500?text=Bride'">
                 </div>
-                <h3>Maura</h3>
+                <h3>Maura Alvarita Deva Megananda</h3>
                 <p class="text-muted mt-3">The one who said yes. She loves coffee, running, and Novandi's terrible jokes.</p>
             </div>
         </div>
@@ -447,12 +448,28 @@ What started as conversations and shared moments has grown into a decision we fe
             </div>
         </div>
     </section>
+    
+
+    <!-- Notes Section -->
+    <section id="notes" class="bg-light">
+        <div class="container">
+            <div class="section-title reveal">
+                <div class="flower-divider"><i class="fas fa-pencil"></i></div>
+                <h2 class="script-font">Gentle Notes</h2>
+            </div>
+            <div class="container position-relative z-2 reveal text-center">
+                <h2 class="mb-4 script-font" style="font-size: 2rem; color: #909090;">We would really appreciate your prayers, well wishes, and blessings for a smooth ceremony and a meaningful journey ahead as husband and wife.</h2>
+            </div>
+        </div>
+        </div>
+    </section>
+    
 
     <!-- Gallery Section -->
     <section id="galeri" class="container">
         <div class="section-title reveal">
             <div class="flower-divider"><i class="fas fa-camera-retro"></i></div>
-            <h2 class="script-font">Galeri</h2>
+            <h2 class="script-font">Galleriy</h2>
         </div>
         <div class="gallery-grid reveal">
             <div class="gallery-item">
@@ -501,7 +518,7 @@ What started as conversations and shared moments has grown into a decision we fe
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p class="small mb-0">Thank you for being part of our special day!</p>
+            <p class="small mb-0">With Love, Novandi & Maura</p>
             <p class="small text-muted mt-2"><i class="fas fa-heart text-danger"></i></p>
         </div>
     </footer>
@@ -511,30 +528,8 @@ What started as conversations and shared moments has grown into a decision we fe
 
     <!-- Custom Logic -->
     <script>
-        // 1. Countdown Timer Logic
-        const weddingDate = new Date("Sep 15, 2025 15:00:00").getTime();
 
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-
-            if (distance < 0) {
-                clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "<h3 class='text-white'>We are married!</h3>";
-            }
-        }, 1000);
-
-        // 2. Scroll Reveal Animation
+        // 1. Scroll Reveal Animation
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -551,7 +546,7 @@ What started as conversations and shared moments has grown into a decision we fe
         // Trigger once on load
         reveal();
 
-        // 3. Smooth Scroll for Navbar Links (Optional polish)
+        // 2. Smooth Scroll for Navbar Links (Optional polish)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -565,14 +560,14 @@ What started as conversations and shared moments has grown into a decision we fe
             });
         });
 
-        // 4. Form Handling
+        // 3. Form Handling
         function handleRSVP(e) {
             e.preventDefault();
             alert("Thank you for your RSVP! We look forward to seeing you.");
             document.getElementById('rsvpForm').reset();
         }
 
-        // 5. Gallery Image Preview
+        // 4. Gallery Image Preview
         document.addEventListener('click', function(e) {
             if (e.target && e.target.closest('.gallery-item img')) {
                 const imgSrc = e.target.src;
