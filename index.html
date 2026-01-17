@@ -155,9 +155,6 @@
             transition: transform 0.5s ease;
         }
 
-        .couple-img-wrapper:hover img {
-            transform: scale(1.1);
-        }
 
         /* --- Parallax Quote Section --- */
         .quote-section {
@@ -272,20 +269,11 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
         }
 
         /* --- Animations (Slide Up) --- */
@@ -331,6 +319,11 @@
                 background-position: center;
                 background-size: cover;
                 height: 70vh;
+            }
+
+            /* Gallery Grid on Mobile */
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -473,28 +466,50 @@
         </div>
         <div class="gallery-grid reveal">
             <div class="gallery-item">
-                <img src="assets/gallery/SBKS6763.JPG" alt="Gallery Image 1" onerror="this.src='https://placehold.co/500x500?text=Image+1'">
+                <img src="assets/gallery/thumbnails/SBKS6763.JPG" alt="Gallery Image 1" onerror="this.src='https://placehold.co/500x500?text=Image+1'">
             </div>
             <div class="gallery-item">
-                <img src="assets/gallery/SBKS6764.JPG" alt="Gallery Image 2" onerror="this.src='https://placehold.co/500x500?text=Image+2'">
+                <img src="assets/gallery/thumbnails/SBKS6764.JPG" alt="Gallery Image 2" onerror="this.src='https://placehold.co/500x500?text=Image+2'">
             </div>
             <div class="gallery-item">
-                <img src="assets/gallery/SBKS6765.JPG" alt="Gallery Image 3" onerror="this.src='https://placehold.co/500x500?text=Image+3'">
+                <img src="assets/gallery/thumbnails/SBKS6765.JPG" alt="Gallery Image 3" onerror="this.src='https://placehold.co/500x500?text=Image+3'">
             </div>
             <div class="gallery-item">
-                <img src="assets/gallery/SBKS6784.JPG" alt="Gallery Image 4" onerror="this.src='https://placehold.co/500x500?text=Image+4'">
+                <img src="assets/gallery/thumbnails/SBKS6784.JPG" alt="Gallery Image 4" onerror="this.src='https://placehold.co/500x500?text=Image+4'">
             </div>
             <div class="gallery-item">
-                <img src="assets/gallery/SBKS6786.JPG" alt="Gallery Image 5" onerror="this.src='https://placehold.co/500x500?text=Image+5'">
+                <img src="assets/gallery/thumbnails/SBKS6786.JPG" alt="Gallery Image 5" onerror="this.src='https://placehold.co/500x500?text=Image+5'">
             </div>
             <div class="gallery-item">
-                <img src="assets/gallery/SBKS6795.JPG" alt="Gallery Image 6" onerror="this.src='https://placehold.co/500x500?text=Image+6'">
+                <img src="assets/gallery/thumbnails/SBKS6793.JPG" alt="Gallery Image 6" onerror="this.src='https://placehold.co/500x500?text=Image+6'">
             </div>
             <div class="gallery-item">
-                <img src="assets/gallery/SBKS6796.JPG" alt="Gallery Image 7" onerror="this.src='https://placehold.co/500x500?text=Image+7'">
+                <img src="assets/gallery/thumbnails/SBKS6795.JPG" alt="Gallery Image 7" onerror="this.src='https://placehold.co/500x500?text=Image+7'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/gallery/thumbnails/SBKS6796.JPG" alt="Gallery Image 8" onerror="this.src='https://placehold.co/500x500?text=Image+8'">
+            </div>
+        </div>
+            <div class="gallery-item">
+                <img src="assets/gallery/thumbnails/SBKS6764.JPG" alt="Gallery Image 2" onerror="this.src='https://placehold.co/500x500?text=Image+2'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/gallery/thumbnails/SBKS6765.JPG" alt="Gallery Image 3" onerror="this.src='https://placehold.co/500x500?text=Image+3'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/gallery/thumbnails/SBKS6784.JPG" alt="Gallery Image 4" onerror="this.src='https://placehold.co/500x500?text=Image+4'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/gallery/thumbnails/SBKS6786.JPG" alt="Gallery Image 5" onerror="this.src='https://placehold.co/500x500?text=Image+5'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/gallery/thumbnails/SBKS6795.JPG" alt="Gallery Image 6" onerror="this.src='https://placehold.co/500x500?text=Image+6'">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/gallery/thumbnails/SBKS6796.JPG" alt="Gallery Image 7" onerror="this.src='https://placehold.co/500x500?text=Image+7'">
             </div>
              <div class="gallery-item">
-                <img src="assets/gallery/SBKS6793.JPG" alt="Gallery Image 8" onerror="this.src='https://placehold.co/500x500?text=Image+8'">
+                <img src="assets/gallery/thumbnails/SBKS6793.JPG" alt="Gallery Image 8" onerror="this.src='https://placehold.co/500x500?text=Image+8'">
             </div>
         </div>
     </section>
@@ -570,7 +585,7 @@
         // 4. Gallery Image Preview
         document.addEventListener('click', function(e) {
             if (e.target && e.target.closest('.gallery-item img')) {
-                const imgSrc = e.target.src;
+                const imgSrc = e.target.src.replace('/thumbnails/', '/');
                 document.getElementById('modalImage').src = imgSrc;
                 const modal = new bootstrap.Modal(document.getElementById('imageModal'));
                 modal.show();
